@@ -29,7 +29,6 @@ for /f "delims=" %%a in (input/client_ips.txt) do (
 
 		REM for ip address, run nslookup
 		for /f "skip=4 tokens=2" %%a in ('"nslookup !reverse_ip!.score.senderscore.com 2>nul"') do (
-			IF [%%a] == [] GOTO MyLabel
 			REM variable to hold returned sender score ip address
 			set sender_score_ip=%%a
 
